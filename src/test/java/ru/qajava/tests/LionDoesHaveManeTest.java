@@ -30,13 +30,9 @@ public class LionDoesHaveManeTest {
     Feline feline = Mockito.mock(Feline.class);
 
     @Test
-    public void lionDoesHaveManeSuccess(){
-        try {
+    public void lionDoesHaveManeSuccess() throws Exception{
             Lion lion = new Lion(sex, feline);
             boolean mane = lion.doesHaveMane();
             Assert.assertEquals(mane, hasMane);
-        }catch (Exception exception){
-            System.out.println("Lion не найден");
-        }
     }
 }

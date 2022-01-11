@@ -25,15 +25,10 @@ public class FelineTest {
     }
 
     @Test
-    public void felineEatMeatSuccess() {
+    public void felineEatMeatSuccess() throws Exception{
         List<String> food = List.of("Животные", "Птицы", "Рыба");
-        try {
             Feline feline = new Feline();
             List<String> receivedFood = feline.eatMeat();
             Assert.assertEquals(receivedFood, food);
-        }
-        catch (Exception exception){
-            System.out.println("Feline не найден");
-        }
     }
 }

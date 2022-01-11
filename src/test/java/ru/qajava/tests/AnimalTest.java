@@ -12,27 +12,19 @@ import static org.hamcrest.CoreMatchers.containsString;
 public class AnimalTest {
 
     @Test
-    public void animalGetFoodHerbivoreSuccess(){
+    public void animalGetFoodHerbivoreSuccess() throws Exception{
         List<String> food = List.of("Трава", "Различные растения");
-        try {
             Animal animal = new Animal();
             List<String> receivedFood = animal.getFood("Травоядное");
             Assert.assertEquals(receivedFood,food);
-        }catch (Exception exception){
-            System.out.println("Animal не найдено");
-        }
     }
 
     @Test
     public void animalGetFamilySuccess(){
         String family = "заячьи, беличьи, мышиные, кошачьи, псовые, медвежьи, куньи";
-        try {
             Animal animal = new Animal();
             String receivedFamily = animal.getFamily();
             MatcherAssert.assertThat(receivedFamily, containsString(family));
-        }catch (Exception exception){
-            System.out.println("Animal не найдено");
-        }
     }
 
     @Test

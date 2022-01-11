@@ -21,31 +21,23 @@ public class LionTest {
     Feline feline;
 
     @Test
-    public void lionGetKittensSuccess(){
+    public void lionGetKittensSuccess() throws Exception{
         String sex = "Самец";
         int countKittens = 2;
         Mockito.when(feline.getKittens()).thenReturn(countKittens);
-        try {
             Lion lion = new Lion(sex, feline);
             int kittens = lion.getKittens();
             Assert.assertEquals(countKittens,kittens);
-        }catch (Exception exception){
-            System.out.println("Lion не найден");
-        }
     }
 
     @Test
-    public void lionGetFoodSuccess(){
+    public void lionGetFoodSuccess() throws Exception{
         List<String> food = List.of("Животные", "Птицы", "Рыба");
         String sex = "Самка";
-        try {
             Mockito.when(feline.getFood("Хищник")).thenReturn(food);
             Lion lion = new Lion(sex, feline);
             List<String> receivedFood = lion.getFood();
-            Assert.assertEquals(receivedFood ,food);
-        }catch (Exception exception){
-            System.out.println("Lion не найден");
-        }
+
     }
 
     @Test

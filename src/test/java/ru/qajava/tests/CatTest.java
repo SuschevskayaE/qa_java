@@ -18,16 +18,12 @@ public class CatTest {
     Feline feline;
 
     @Test
-    public void catGetFoodSuccess() {
+    public void catGetFoodSuccess() throws Exception{
         List<String> food = List.of("Животные", "Птицы", "Рыба");
-        try {
             Mockito.when(feline.eatMeat()).thenReturn(food);
             Cat cat = new Cat(feline);
             List<String> receivedFood = cat.getFood();
             Assert.assertEquals(receivedFood,food);
-        }catch (Exception exception){
-            System.out.println("Cat не найден");
-        }
     }
 
     @Test

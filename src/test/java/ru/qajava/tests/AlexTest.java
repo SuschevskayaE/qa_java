@@ -17,39 +17,28 @@ public class AlexTest {
     Feline feline;
 
     @Test
-    public void alexGetFriendsSuccess() {
+    public void alexGetFriendsSuccess() throws Exception{
         List<String> friends = List.of("Марти", "Глория", "Мелман");
-        try {
             Alex alex = new Alex(feline);
             List<String> receivedFriends = alex.getFriends();
             Assert.assertEquals(receivedFriends,friends);
-        }catch (Exception exception){
-            System.out.println("Alex не найден");
-        }
+
     }
 
     @Test
-    public void alexGetPlaceOfLivingSuccess() {
+    public void alexGetPlaceOfLivingSuccess() throws Exception{
         String place = "Нью-Йоркский зоопарк";
-        try {
             Alex alex = new Alex(feline);
             String receivedPlace = alex.getPlaceOfLiving();
             Assert.assertEquals(receivedPlace,place);
-        }catch (Exception exception){
-            System.out.println("Alex не найден");
-        }
     }
 
     @Test
-    public void alexGetKittensSuccess(){
+    public void alexGetKittensSuccess() throws Exception{
         int kittens = 0;
-        try {
             Alex alex = new Alex(feline);
             int alexKittens = alex.getKittens();
             Assert.assertEquals(kittens,alexKittens);
-        }catch (Exception exception){
-            System.out.println("Alex не найден");
-        }
     }
 
 
